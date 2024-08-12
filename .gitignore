@@ -1,0 +1,5 @@
+build/
+bin/
+backup
+.*.txt
+.*.swp
