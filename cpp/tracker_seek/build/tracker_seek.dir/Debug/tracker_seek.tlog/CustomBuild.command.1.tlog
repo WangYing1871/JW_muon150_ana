@@ -1,0 +1,10 @@
+^D:\CPPCODE\MUSTC_DATA_PROCESS\SOURCE\C_PP\TRACKER_SEEK\CMAKELISTS.TXT
+setlocal
+D:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/cppcode/mustc_data_process/source/c_pp/tracker_seek -BD:/cppcode/mustc_data_process/source/c_pp/tracker_seek/build --check-stamp-file D:/cppcode/mustc_data_process/source/c_pp/tracker_seek/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

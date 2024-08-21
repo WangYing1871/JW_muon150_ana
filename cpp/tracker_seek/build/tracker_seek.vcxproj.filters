@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\tracker_seek.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\cppcode\mustc_data_process\source\my_pub\src\hit_dec.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\cppcode\mustc_data_process\source\my_pub\src\linear_fit.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\cppcode\mustc_data_process\source\my_pub\src\list_file.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\cppcode\mustc_data_process\source\my_pub\src\my_poca.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\src\best_tracker.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\tracker_seek.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\cppcode\mustc_data_process\source\my_pub\common_lib\constant.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\cppcode\mustc_data_process\source\my_pub\common_lib\getopt.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\cppcode\mustc_data_process\source\my_pub\common_lib\json.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\cppcode\mustc_data_process\source\my_pub\lib\MyPocaResult.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\cppcode\mustc_data_process\source\my_pub\lib\MyTracker.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\cppcode\mustc_data_process\source\my_pub\lib\PositionData.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\cppcode\mustc_data_process\source\my_pub\lib\hit_dec.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\cppcode\mustc_data_process\source\my_pub\lib\linear_fit.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\cppcode\mustc_data_process\source\my_pub\lib\list_file.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\cppcode\mustc_data_process\source\my_pub\lib\my_poca.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\cppcode\mustc_data_process\source\my_pub\lib\position_data.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\cppcode\mustc_data_process\source\my_pub\lib\split_string.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\inc\best_tracker.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{0FC7EF4B-78DD-3016-A240-8F12E16CADE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{C313DE79-C97C-3413-B98B-AE635E54DE9B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

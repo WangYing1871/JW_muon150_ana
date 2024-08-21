@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "filesystem": "cpp",
+        "xstring": "cpp",
+        "fstream": "cpp",
+        "ostream": "cpp",
+        "chrono": "cpp",
+        "format": "cpp",
+        "iosfwd": "cpp",
+        "iterator": "cpp",
+        "xlocmon": "cpp",
+        "xlocnum": "cpp",
+        "xloctime": "cpp"
+    }
+}

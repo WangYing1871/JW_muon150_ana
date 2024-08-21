@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{224E18E5-123E-3CF7-97FF-EAEB381B2A69}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\inc;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\..\..\my_pub\lib;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\..\..\my_pub\common_lib;D:\root_v6.26.06\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\inc;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\..\..\my_pub\lib;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\..\..\my_pub\common_lib;D:\root_v6.26.06\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\inc;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\..\..\my_pub\lib;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\..\..\my_pub\common_lib;D:\root_v6.26.06\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\inc;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\..\..\my_pub\lib;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\..\..\my_pub\common_lib;D:\root_v6.26.06\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/cppcode/mustc_data_process/source/c_pp/tracker_seek/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+D:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/cppcode/mustc_data_process/source/c_pp/tracker_seek -BD:/cppcode/mustc_data_process/source/c_pp/tracker_seek/build --check-stamp-file D:/cppcode/mustc_data_process/source/c_pp/tracker_seek/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeCInformation.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeCXXInformation.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeCommonLanguageInclude.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeGenericSystem.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeInitializeConfigs.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeLanguageInformation.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeParseArguments.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeRCInformation.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeSystemSpecificInformation.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeSystemSpecificInitialize.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Compiler\MSVC-C.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Compiler\MSVC-CXX.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Compiler\MSVC.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\Windows-Initialize.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\Windows-MSVC-C.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\Windows-MSVC.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\Windows.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\WindowsPaths.cmake;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\build\CMakeFiles\3.27.7\CMakeCCompiler.cmake;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\build\CMakeFiles\3.27.7\CMakeCXXCompiler.cmake;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\build\CMakeFiles\3.27.7\CMakeRCCompiler.cmake;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\build\CMakeFiles\3.27.7\CMakeSystem.cmake;D:\root_v6.26.06\cmake\ROOTConfig-targets-debug.cmake;D:\root_v6.26.06\cmake\ROOTConfig-targets.cmake;D:\root_v6.26.06\cmake\ROOTConfig-version.cmake;D:\root_v6.26.06\cmake\ROOTConfig.cmake;D:\root_v6.26.06\cmake\ROOTUseFile.cmake;D:\root_v6.26.06\cmake\RootMacros.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/cppcode/mustc_data_process/source/c_pp/tracker_seek/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+D:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/cppcode/mustc_data_process/source/c_pp/tracker_seek -BD:/cppcode/mustc_data_process/source/c_pp/tracker_seek/build --check-stamp-file D:/cppcode/mustc_data_process/source/c_pp/tracker_seek/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeCInformation.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeCXXInformation.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeCommonLanguageInclude.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeGenericSystem.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeInitializeConfigs.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeLanguageInformation.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeParseArguments.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeRCInformation.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeSystemSpecificInformation.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeSystemSpecificInitialize.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Compiler\MSVC-C.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Compiler\MSVC-CXX.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Compiler\MSVC.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\Windows-Initialize.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\Windows-MSVC-C.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\Windows-MSVC.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\Windows.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\WindowsPaths.cmake;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\build\CMakeFiles\3.27.7\CMakeCCompiler.cmake;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\build\CMakeFiles\3.27.7\CMakeCXXCompiler.cmake;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\build\CMakeFiles\3.27.7\CMakeRCCompiler.cmake;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\build\CMakeFiles\3.27.7\CMakeSystem.cmake;D:\root_v6.26.06\cmake\ROOTConfig-targets-debug.cmake;D:\root_v6.26.06\cmake\ROOTConfig-targets.cmake;D:\root_v6.26.06\cmake\ROOTConfig-version.cmake;D:\root_v6.26.06\cmake\ROOTConfig.cmake;D:\root_v6.26.06\cmake\ROOTUseFile.cmake;D:\root_v6.26.06\cmake\RootMacros.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/cppcode/mustc_data_process/source/c_pp/tracker_seek/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+D:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/cppcode/mustc_data_process/source/c_pp/tracker_seek -BD:/cppcode/mustc_data_process/source/c_pp/tracker_seek/build --check-stamp-file D:/cppcode/mustc_data_process/source/c_pp/tracker_seek/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeCInformation.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeCXXInformation.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeCommonLanguageInclude.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeGenericSystem.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeInitializeConfigs.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeLanguageInformation.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeParseArguments.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeRCInformation.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeSystemSpecificInformation.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeSystemSpecificInitialize.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Compiler\MSVC-C.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Compiler\MSVC-CXX.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Compiler\MSVC.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\Windows-Initialize.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\Windows-MSVC-C.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\Windows-MSVC.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\Windows.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\WindowsPaths.cmake;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\build\CMakeFiles\3.27.7\CMakeCCompiler.cmake;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\build\CMakeFiles\3.27.7\CMakeCXXCompiler.cmake;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\build\CMakeFiles\3.27.7\CMakeRCCompiler.cmake;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\build\CMakeFiles\3.27.7\CMakeSystem.cmake;D:\root_v6.26.06\cmake\ROOTConfig-targets-debug.cmake;D:\root_v6.26.06\cmake\ROOTConfig-targets.cmake;D:\root_v6.26.06\cmake\ROOTConfig-version.cmake;D:\root_v6.26.06\cmake\ROOTConfig.cmake;D:\root_v6.26.06\cmake\ROOTUseFile.cmake;D:\root_v6.26.06\cmake\RootMacros.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/cppcode/mustc_data_process/source/c_pp/tracker_seek/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+D:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/cppcode/mustc_data_process/source/c_pp/tracker_seek -BD:/cppcode/mustc_data_process/source/c_pp/tracker_seek/build --check-stamp-file D:/cppcode/mustc_data_process/source/c_pp/tracker_seek/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeCInformation.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeCXXInformation.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeCommonLanguageInclude.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeGenericSystem.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeInitializeConfigs.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeLanguageInformation.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeParseArguments.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeRCInformation.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeSystemSpecificInformation.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\CMakeSystemSpecificInitialize.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Compiler\MSVC-C.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Compiler\MSVC-CXX.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Compiler\MSVC.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\Windows-Initialize.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\Windows-MSVC-C.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\Windows-MSVC.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\Windows.cmake;D:\Qt\Tools\CMake_64\share\cmake-3.27\Modules\Platform\WindowsPaths.cmake;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\build\CMakeFiles\3.27.7\CMakeCCompiler.cmake;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\build\CMakeFiles\3.27.7\CMakeCXXCompiler.cmake;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\build\CMakeFiles\3.27.7\CMakeRCCompiler.cmake;D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\build\CMakeFiles\3.27.7\CMakeSystem.cmake;D:\root_v6.26.06\cmake\ROOTConfig-targets-debug.cmake;D:\root_v6.26.06\cmake\ROOTConfig-targets.cmake;D:\root_v6.26.06\cmake\ROOTConfig-version.cmake;D:\root_v6.26.06\cmake\ROOTConfig.cmake;D:\root_v6.26.06\cmake\ROOTUseFile.cmake;D:\root_v6.26.06\cmake\RootMacros.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\build\ZERO_CHECK.vcxproj">
+      <Project>{703AB222-70E3-3294-9F88-35C7EDEDE325}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\cppcode\mustc_data_process\source\c_pp\tracker_seek\build\tracker_seek.vcxproj">
+      <Project>{E5A02086-EA21-3621-8C14-944EC1944834}</Project>
+      <Name>tracker_seek</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

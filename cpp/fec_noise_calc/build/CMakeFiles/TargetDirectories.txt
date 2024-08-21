@@ -1,0 +1,3 @@
+/home/wangying/work/mis/analyse_code/cpp/fec_noise_calc/build/CMakeFiles/fec_noise_calc.dir
+/home/wangying/work/mis/analyse_code/cpp/fec_noise_calc/build/CMakeFiles/edit_cache.dir
+/home/wangying/work/mis/analyse_code/cpp/fec_noise_calc/build/CMakeFiles/rebuild_cache.dir

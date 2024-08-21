@@ -1,0 +1,1 @@
+/home/wangying/software/gcc-13.2.0-build/bin/g++ CMakeFiles/usb_data_separate.dir/usb_data_separate.cc.o -o usb_data_separate
