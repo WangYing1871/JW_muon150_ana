@@ -25,10 +25,14 @@ echo "project_path: "$project_path
 cd ${project_path}/cpp/usb_data_separate/
 if [ ! -d build ]; then
   mkdir build && cd build && cmake ../
+else
+  cd build && make clean && cmake ../
 fi
 cd ${project_path}/cpp/adas_data_unpack/
 if [ ! -d build ]; then
   mkdir build && cd build && cmake ../
+else
+  cd build && make clean && cmake ../
 fi
 
 echo "================baseline=======================>"
@@ -50,14 +54,20 @@ echo "<===============baseline======================="
 cd ${project_path}/cpp/adas_data_decode
 if [ ! -d build ];then
   mkdir build && cd build && cmake ../
+else
+  cd build && make clean && cmake ../
 fi
 cd ${project_path}/cpp/hit_position_reconstrcut
 if [ ! -d build ];then
   mkdir build && cd build && cmake ../
+else
+  cd build && make clean && cmake ../
 fi
 cd ${project_path}/cpp/adas_muxbrd_fit
 if [ ! -d build ];then
   mkdir build && cd build && cmake ../
+else
+  cd build && make clean && cmake ../
 fi
 
 echo "===============signal=========================>"

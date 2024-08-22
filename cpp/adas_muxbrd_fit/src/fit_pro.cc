@@ -151,6 +151,7 @@ bool fit_pro::convert_position_data()
 
 
 
+        info_out(setlayer_used);
         for (int i = setlayer; i < setlayer_used; i++)
         {
             if (hit_idx == 0)
@@ -167,9 +168,12 @@ bool fit_pro::convert_position_data()
             {
                 xnum++;
                 array00[i][0]++;
+                info_out(detector_data[i].x_nhits);
                 for (int j = 0; j < detector_data[i].x_nhits; j++)
                 {
                     temp_chnx.push_back(detector_data[i].x[j] * 0.4); //mm
+                    info_out(detector_data[i].x[j]);
+                    info_out(detector_data[i].x[j]*0.4);
                     temp_ampx.push_back(abs(detector_data[i].x_amp[j]) * LSB);
                     temp_clux.push_back(detector_data[i].x_chn_num[j]);
                     temp_dimx.push_back(i);
@@ -180,9 +184,11 @@ bool fit_pro::convert_position_data()
             {
                 ynum++;
                 array00[i][1]++;
+                info_out(detector_data[i].y_nhits);
                 for (int j = 0; j < detector_data[i].y_nhits; j++)
                 {
                     temp_chny.push_back(detector_data[i].y[j] * 0.4);
+                    info_out(detector_data[i].y[j]*0.4);
                     temp_ampy.push_back(abs(detector_data[i].y_amp[j]) * LSB);
                     temp_cluy.push_back(detector_data[i].y_chn_num[j]);
                     temp_dimy.push_back(i);
@@ -196,6 +202,7 @@ bool fit_pro::convert_position_data()
             (temp_clux.size() > 0 && xnum == (setlayer_used - setlayer)) || 
             (temp_cluy.size() > 0 && ynum == ((setlayer_used - setlayer))))
         {
+          info_out("0000");
             trig_id.push_back(trigger_id);
             t_channel_x.push_back(temp_chnx);
             t_amp_x.push_back(temp_ampx);
@@ -209,6 +216,7 @@ bool fit_pro::convert_position_data()
         }
         else
         {
+          info_out("1111");
             continue;
         }
     }
@@ -271,6 +279,7 @@ void fit_pro::process_data(char axis)
     if (axis == 'x')
     {
         fec_datax = fec_data_fit;
+        info_out(fec_data_fit.size());
         xidx_data = idx_data;
         xaim_data = aim_data;
         xaim_data_amp = aim_data_amp;
@@ -279,6 +288,7 @@ void fit_pro::process_data(char axis)
     else if (axis == 'y')
     {
         fec_datay = fec_data_fit;
+        info_out(fec_data_fit.size());
         yidx_data = idx_data;
         yaim_data = aim_data;
         yaim_data_amp = aim_data_amp;
@@ -421,27 +431,7 @@ void fit_pro::write_poca(MyPocaResult poca_result)
 
 bool fit_pro::data_select()
 {
-    // 筛选出符合条件的数据
-    // if (is_muon_scatter)
-    // {
-    //     for (int i = 0; i < t_dimension_2d.size(); /* no increment here */)
-    //     {
-    //         if (std::all_of(dec_idx.begin(), dec_idx.end(), [&](int val)
-    //                         { return std::find(t_dimension_2d[i].begin(), t_dimension_2d[i].end(), val) != t_dimension_2d[i].end(); }) == false)
-    //         {
-    //             t_dimension_2d.erase(t_dimension_2d.begin() + i);
-    //             t_channel_2d.erase(t_channel_2d.begin() + i);
-    //             t_amp_2d.erase(t_amp_2d.begin() + i);
-    //             t_cluster_2d.erase(t_cluster_2d.begin() + i);
-    //             trig.erase(trig.begin() + i);
-    //         }
-    //         else
-    //         {
-    //             ++i; // only increment if no erasure
-    //         }
-    //     }
-    // }
-
+  info_out(trig.size());
     if (trig.size() == 0)
     {
         cout << cRED << "no valid data" << cRESET << endl;
@@ -521,18 +511,6 @@ bool fit_pro::data_select()
             fec_data_combine_cluster.push_back(temp_cluster);
         }
 
-        // ofstream out(save_path + "combine_data.txt", ios::app);
-        // for (int i = 0; i < fec_data_combine.size(); i++)
-        // {
-        //     for (int j = 0; j < fec_data_combine[i].size(); j++)
-        //     {
-        //         out << fec_data_combine[i][j] << " ";
-        //     }
-        //     out << endl;
-        // }
-
-        // cout << cBLUE << "fec data combine success" cRESET << endl;
-        // cout << endl;
         return true;
     }
 }
@@ -778,7 +756,15 @@ void fit_pro::filterAndCombine()
     }
 }
 
-void fit_pro::findTarget(vector<vector<double>> &aimData, vector<vector<double>> &ampData, vector<vector<double>> &clusterData, vector<vector<float>> &fecData, vector<vector<double>> &dataSecondary, vector<vector<double>> &dataAmpSecondary, vector<vector<double>> &dataClusterSecondary, double txOrTy)
+void fit_pro::findTarget(
+    vector<vector<double>> &aimData
+    , vector<vector<double>> &ampData
+    , vector<vector<double>> &clusterData
+    , vector<vector<float>> &fecData
+    , vector<vector<double>> &dataSecondary
+    , vector<vector<double>> &dataAmpSecondary
+    , vector<vector<double>> &dataClusterSecondary
+    , double txOrTy)
 {
     for (auto &row : aimData)
     {
@@ -819,7 +805,14 @@ void fit_pro::findTarget(vector<vector<double>> &aimData, vector<vector<double>>
     }
 }
 
-void fit_pro::calculateSpatial(vector<vector<double>> &dataSecondary, vector<vector<double>> &dataAmpSecondary, vector<vector<double>> &dataClusterSecondary, vector<vector<double>> &dataTertiary, vector<vector<double>> &dataAmpTertiary, vector<vector<double>> &dataClusterTertiary, const string &filename, bool xory)
+void fit_pro::calculateSpatial(
+    vector<vector<double>> &dataSecondary
+    , vector<vector<double>> &dataAmpSecondary
+    , vector<vector<double>> &dataClusterSecondary
+    , vector<vector<double>> &dataTertiary
+    , vector<vector<double>> &dataAmpTertiary
+    , vector<vector<double>> &dataClusterTertiary
+    , const string &filename, bool xory)
 {
     for (int i = 0; i < dataSecondary.size(); i++)
     {
