@@ -1,3 +1,0 @@
-D:/cppcode/mustc_data_process/source/c_pp/tracker_seek/build/CMakeFiles/tracker_seek.dir
-D:/cppcode/mustc_data_process/source/c_pp/tracker_seek/build/CMakeFiles/ALL_BUILD.dir
-D:/cppcode/mustc_data_process/source/c_pp/tracker_seek/build/CMakeFiles/ZERO_CHECK.dir

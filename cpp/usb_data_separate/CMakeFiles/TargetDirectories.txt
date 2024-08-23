@@ -1,3 +1,0 @@
-/home/wangying/work/mis/analyse_code/cpp/usb_data_separate/CMakeFiles/usb_data_separate.dir
-/home/wangying/work/mis/analyse_code/cpp/usb_data_separate/CMakeFiles/edit_cache.dir
-/home/wangying/work/mis/analyse_code/cpp/usb_data_separate/CMakeFiles/rebuild_cache.dir

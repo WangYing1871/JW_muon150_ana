@@ -1,3 +1,0 @@
-/home/wangying/work/mis/analyse_code/cpp/hit_position_reconstrcut/build/CMakeFiles/hit_position_reconstrcut.dir
-/home/wangying/work/mis/analyse_code/cpp/hit_position_reconstrcut/build/CMakeFiles/edit_cache.dir
-/home/wangying/work/mis/analyse_code/cpp/hit_position_reconstrcut/build/CMakeFiles/rebuild_cache.dir

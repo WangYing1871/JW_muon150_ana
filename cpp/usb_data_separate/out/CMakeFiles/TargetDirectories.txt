@@ -1,3 +1,0 @@
-/mnt/e/adas/数据处理代码/cpp/usb_data_separate/out/CMakeFiles/usb_data_separate.dir
-/mnt/e/adas/数据处理代码/cpp/usb_data_separate/out/CMakeFiles/edit_cache.dir
-/mnt/e/adas/数据处理代码/cpp/usb_data_separate/out/CMakeFiles/rebuild_cache.dir

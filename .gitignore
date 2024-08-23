@@ -1,5 +1,11 @@
-result/
-test/
+result
+test
 test.7z
-test_data/
-liuyl/
+test_data
+liuyl
+build
+.*.root
+.*.txt
+.*.dat
+calcu_and_draw
+fec_noise_calc 

@@ -65,7 +65,6 @@ fit_pro::fit_pro(string input_filename, string align_filename, string range_file
 
         poca_file.open(save_path + "poca.txt", ios::app);
         poca_track();
-        info_out("wangying");
     }
     else
     {

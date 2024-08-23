@@ -1,3 +1,0 @@
-/mnt/d/cppcode/mustc_data_process/source/c_pp/adas_data_decode/out/CMakeFiles/adas_data_dec.dir
-/mnt/d/cppcode/mustc_data_process/source/c_pp/adas_data_decode/out/CMakeFiles/edit_cache.dir
-/mnt/d/cppcode/mustc_data_process/source/c_pp/adas_data_decode/out/CMakeFiles/rebuild_cache.dir

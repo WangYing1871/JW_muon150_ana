@@ -25,14 +25,10 @@ echo "project_path: "$project_path
 cd ${project_path}/cpp/usb_data_separate/
 if [ ! -d build ]; then
   mkdir build && cd build && cmake ../
-else
-  cd build && make clean && cmake ../
 fi
 cd ${project_path}/cpp/adas_data_unpack/
 if [ ! -d build ]; then
   mkdir build && cd build && cmake ../
-else
-  cd build && make clean && cmake ../
 fi
 
 echo "================baseline=======================>"
@@ -54,20 +50,14 @@ echo "<===============baseline======================="
 cd ${project_path}/cpp/adas_data_decode
 if [ ! -d build ];then
   mkdir build && cd build && cmake ../
-else
-  cd build && make clean && cmake ../
 fi
 cd ${project_path}/cpp/hit_position_reconstrcut
 if [ ! -d build ];then
   mkdir build && cd build && cmake ../
-else
-  cd build && make clean && cmake ../
 fi
 cd ${project_path}/cpp/adas_muxbrd_fit
 if [ ! -d build ];then
   mkdir build && cd build && cmake ../
-else
-  cd build && make clean && cmake ../
 fi
 
 echo "===============signal=========================>"
@@ -80,28 +70,29 @@ for i in $(seq 0 $((${#names[@]}-1))); do
   file_name_str=${file_name_str_a[$((${#file_name_str_a[@]}-1))]}
   echo $file_name_str
   file_path=$(echo "${file_name}" | sed -e 's/[^/]*$//p' -n)
-  cd ${project_path}/cpp/usb_data_separate/build
-  ./usb_data_separate -f ${file_name} -r
 
-  cd ${project_path}/cpp/adas_data_unpack/build
-  for j in $(seq 0 5); do
-    tmp0=$(echo ${file_name_str} | sed 's+\(.*\)\.\(.*\)+\1+p' -n)
-    tmp1=$(echo ${file_name_str} | sed 's+\(.*\)\.\(.*\)+\2+p' -n)
-    tmp="${tmp0}"_mt-$j."${tmp1}"
-    ./adas_data_unpack -i 6 -L 15 -b 0 -f ${file_path}/dec_out/${tmp}
-  done
+ cd ${project_path}/cpp/usb_data_separate/build
+ ./usb_data_separate -f ${file_name} -r
 
-  cd ${project_path}/cpp/adas_data_decode/build
-  for j in $(seq 0 5); do
-    tmp0=$(echo ${file_name_str} | sed 's+\(.*\)\.\(.*\)+\1+p' -n)
-    tmp="${tmp0}"_mt-$j."root"
-    ./adas_data_dec -b noise-0_mt-0_base.txt -n noise-0_mt-0_rms.txt -i 6 -e ../config/muon15.csv -f ${file_path}/dec_out/unpack_result/${tmp}
-  done
+ cd ${project_path}/cpp/adas_data_unpack/build
+ for j in $(seq 0 5); do
+   tmp0=$(echo ${file_name_str} | sed 's+\(.*\)\.\(.*\)+\1+p' -n)
+   tmp1=$(echo ${file_name_str} | sed 's+\(.*\)\.\(.*\)+\2+p' -n)
+   tmp="${tmp0}"_mt-$j."${tmp1}"
+   ./adas_data_unpack -i 6 -L 15 -b 0 -f ${file_path}/dec_out/${tmp}
+ done
+
+ cd ${project_path}/cpp/adas_data_decode/build
+ for j in $(seq 0 5); do
+   tmp0=$(echo ${file_name_str} | sed 's+\(.*\)\.\(.*\)+\1+p' -n)
+   tmp="${tmp0}"_mt-$j."root"
+   ./adas_data_dec -b noise-0_mt-0_base.txt -n noise-0_mt-0_rms.txt -i 6 -e ../config/muon15.csv -f ${file_path}/dec_out/unpack_result/${tmp}
+ done
 
   cd ${project_path}/cpp/hit_position_reconstrcut/build
   tmp0=$(echo ${file_name_str} | sed 's+\(.*\)\.\(.*\)+\1+p' -n)
   tmp=${tmp0}_dec_mt-0.root
-  ./hit_position_reconstrcut -p ../config/link_position_6layer_adas.csv -z ../config/z_posiiton_6laeyr_adas.csv -L 0x3F -l 6 -V -f ${file_path}/dec_out/unpack_result/dec_result/${tmp}
+  ./hit_position_reconstrcut -p ../config/link_position_6layer_adas.csv -z ../config/z_posiiton_6laeyr_adas_jw.csv -L 0x3F -l 6 -V -f ${file_path}/dec_out/unpack_result/dec_result/${tmp}
 
   tmp=${tmp0}_dec_mt_hit_data_link0x3F.root
   file_name_get=${file_path}/dec_out/unpack_result/dec_result/${tmp}
@@ -114,16 +105,22 @@ do
   link_name="${link_name}"" ${links_root_file[$i]}"
 done
 
-echo ${link_name}
-hadd -f ${project_path}/result/link0x3F.root ${link_name}
+#echo ${link_name}
+#hadd -f ${project_path}/result/link0x3F.root ${link_name}
+#
+#cd ${project_path}/cpp/adas_muxbrd_fit/build
+#./adas_muxbrd_sync -R ../config/detector_hitrange.txt -a ../config/alignment0416v3.txt -u -v 0 -f ${project_path}/result/link0x3F.root 
+#./adas_muxbrd_sync -R ../config/detector_hitrange.txt -a ../config/alignment0416v3.txt -u -v 1 -f ${project_path}/result/link0x3F.root 
+#./adas_muxbrd_sync -R ../config/detector_hitrange.txt -a ../config/alignment0416v3.txt -u -v 2 -f ${project_path}/result/link0x3F.root 
+#./adas_muxbrd_sync -R ../config/detector_hitrange.txt -a ../config/alignment0416v3.txt -u -v 3 -f ${project_path}/result/link0x3F.root 
+#./adas_muxbrd_sync -R ../config/detector_hitrange.txt -a ../config/alignment0416v3.txt -u -v 4 -f ${project_path}/result/link0x3F.root 
+#./adas_muxbrd_sync -R ../config/detector_hitrange.txt -a ../config/alignment0416v3.txt -u -v 5 -f ${project_path}/result/link0x3F.root 
+cd ${project_path}/cpp/tracker_seek/build
+for i in $(seq 0 $((${#link_name[@]}-1)))
+do
+./tracker_seek -f ${i} -L 5 -D 6 -l 0x3F -r ../config/offset_initial.txt -j -T 1>/dev/null
 
-cd ${project_path}/cpp/adas_muxbrd_fit/build
-./adas_muxbrd_sync -R ../config/detector_hitrange.txt -a ../config/alignment0416v3.txt -u -v 0 -f ${project_path}/result/link0x3F.root 
-./adas_muxbrd_sync -R ../config/detector_hitrange.txt -a ../config/alignment0416v3.txt -u -v 1 -f ${project_path}/result/link0x3F.root 
-./adas_muxbrd_sync -R ../config/detector_hitrange.txt -a ../config/alignment0416v3.txt -u -v 2 -f ${project_path}/result/link0x3F.root 
-./adas_muxbrd_sync -R ../config/detector_hitrange.txt -a ../config/alignment0416v3.txt -u -v 3 -f ${project_path}/result/link0x3F.root 
-./adas_muxbrd_sync -R ../config/detector_hitrange.txt -a ../config/alignment0416v3.txt -u -v 4 -f ${project_path}/result/link0x3F.root 
-./adas_muxbrd_sync -R ../config/detector_hitrange.txt -a ../config/alignment0416v3.txt -u -v 5 -f ${project_path}/result/link0x3F.root 
+done
 
 
 

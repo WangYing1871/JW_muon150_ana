@@ -1,3 +1,0 @@
-/home/wangying/work/mis/analyse_code/cpp/tracker_seek/CMakeFiles/tracker_seek.dir
-/home/wangying/work/mis/analyse_code/cpp/tracker_seek/CMakeFiles/edit_cache.dir
-/home/wangying/work/mis/analyse_code/cpp/tracker_seek/CMakeFiles/rebuild_cache.dir

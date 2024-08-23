@@ -1,3 +1,0 @@
-/home/wangying/work/mis/analyse_code/cpp/adas_data_unpack/build/CMakeFiles/adas_data_unpack.dir
-/home/wangying/work/mis/analyse_code/cpp/adas_data_unpack/build/CMakeFiles/edit_cache.dir
-/home/wangying/work/mis/analyse_code/cpp/adas_data_unpack/build/CMakeFiles/rebuild_cache.dir

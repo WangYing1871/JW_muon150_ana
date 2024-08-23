@@ -307,7 +307,8 @@ bool best_tracker::run()
 			}
 			x_nhit[layer] = detector_data[layer].x_nhits;
 			y_nhit[layer] = detector_data[layer].y_nhits;
-			z[layer] = detector_data[layer].z + offset_parameter[layer][2]; // Unit mm
+			//z[layer] = detector_data[layer].z + offset_parameter[layer][2]; // Unit mm
+			z[layer] = detector_data[layer].z*10 + offset_parameter[layer][2]; // Unit mm
 		}
     std::cout
       <<"trigger_id: "<<trigger_id
@@ -402,13 +403,12 @@ bool best_tracker::run()
 			dataout_tree->Fill();
 			offset_aln();
 			write_txt_file();
-      write_json_file(valid_event_cnts);
 			//if (is_save_json)
 			//{
-      //  info_out("wangying0");
 			//	write_json_file(valid_event_cnts);
 			//}
-			//valid_event_cnts++;
+				write_json_file(valid_event_cnts);
+			valid_event_cnts++;
 
 			if (is_calc_target_offset)
 			{
@@ -908,7 +908,7 @@ void best_tracker::write_json_file(int outevt)
 		vec.x(), vec.y(), vec.z()};
 	event_json["tracks"][0]["angle"] = {
 		round(vec.Theta() / 3.1415 * 180 * 100) / 100, round(vec.Phi() / 3.1415 * 180 * 100) / 100};
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < det_layer_used; i++)
 	{
 		event_json["hits"][i] = {
 			kx * z[i] + bx, ky * z[i] + by};
@@ -934,7 +934,7 @@ void best_tracker::write_status_json_file()
 	status_json["id"] = 35;
 	status_json["daq"] = "on";
 	status_json["event_rate"] = (double)valid_event_cnts / acq_time;
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < det_layer_used; i++)
 	{
 		status_json["hv_supply"][2 * i]["name"] = "hv" + to_string(i + 1) + "_cathode";
 		status_json["hv_supply"][2 * i]["voltage"] = 720;

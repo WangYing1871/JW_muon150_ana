@@ -1,3 +1,0 @@
-/mnt/e/adas/analyse_code/cpp/adas_data_unpack/out/CMakeFiles/adas_data_unpack.dir
-/mnt/e/adas/analyse_code/cpp/adas_data_unpack/out/CMakeFiles/edit_cache.dir
-/mnt/e/adas/analyse_code/cpp/adas_data_unpack/out/CMakeFiles/rebuild_cache.dir
