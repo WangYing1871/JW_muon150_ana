@@ -251,7 +251,6 @@ bool hit_reconstruct::load_z(string filename)
 bool hit_reconstruct::fill_data(string data_filename)
 {
 	int data_len = init_datain(data_filename);
-  info_out(data_len);
 	if (data_len == 0)
 	{
 		return false;
@@ -268,9 +267,7 @@ bool hit_reconstruct::fill_data(string data_filename)
 		{
 			continue;
 		}
-    info_out(j);
 		fec_data_tree[j]->GetEntry(0);
-    info_out(trigger_id_all[j]);
 		if (trigger_id_all[j] < trigger_id_start)
 		{
 			trigger_id_start = trigger_id_all[j];
@@ -282,9 +279,6 @@ bool hit_reconstruct::fill_data(string data_filename)
 		}
 	}
 
-
-  info_out(trigger_id_start);
-  info_out(trigger_id_end);
 	cout << "Set trigger start to " << trigger_id_start << " and set trigger end to " << trigger_id_end << endl;
 	cout << "Total event number is " << data_len << endl;
 	int rd_idx[cELINK_NUM] = {0}; // This parameter is used to locate the Entry index of each tree
@@ -328,7 +322,6 @@ bool hit_reconstruct::fill_data(string data_filename)
 			}
 			if (trigger_id_all[j] == i)
 			{
-        info_out(trigger_id_all[j]);
 				rd_idx[j]++;
 				trigger_aligned[j] = true;
 				is_trigger_aligned = true;
@@ -336,7 +329,6 @@ bool hit_reconstruct::fill_data(string data_filename)
 		}
 		if (!is_trigger_aligned)
 		{
-      info_out(i);
 			continue;
 		}
 
@@ -408,7 +400,6 @@ bool hit_reconstruct::position_judge(int link_num)
 		for (int j = 0; j < cluster_size[link_num][k]; j++)
 		{
 			total_amp += hit_amp[link_num][j + base];
-      info_out(hit_amp[link_num][j+base]);
 			//sum_position_amp += hit_amp[link_num][j + base] * hit_strips[link_num][j + base];
 			sum_position_amp += hit_amp[link_num][j + base] * hit_strips[link_num][j + base];
 		}

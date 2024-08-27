@@ -5,6 +5,7 @@ if [ $# -eq 0 ]; then
 fi
 cmake=$(which cmake)
 root=$(which root)
+dname=$3
 
 if [ ! -d result ]; then
   mkdir result
@@ -24,11 +25,11 @@ project_path=$(pwd);
 echo "project_path: "$project_path
 cd ${project_path}/cpp/usb_data_separate/
 if [ ! -d build ]; then
-  mkdir build && cd build && cmake ../
+  mkdir build && cd build && cmake ../ && make
 fi
 cd ${project_path}/cpp/adas_data_unpack/
 if [ ! -d build ]; then
-  mkdir build && cd build && cmake ../
+  mkdir build && cd build && cmake ../ && make
 fi
 
 echo "================baseline=======================>"
@@ -49,15 +50,15 @@ echo "<===============baseline======================="
 
 cd ${project_path}/cpp/adas_data_decode
 if [ ! -d build ];then
-  mkdir build && cd build && cmake ../
+  mkdir build && cd build && cmake ../ && make
 fi
 cd ${project_path}/cpp/hit_position_reconstrcut
 if [ ! -d build ];then
-  mkdir build && cd build && cmake ../
+  mkdir build && cd build && cmake ../ && make
 fi
 cd ${project_path}/cpp/adas_muxbrd_fit
 if [ ! -d build ];then
-  mkdir build && cd build && cmake ../
+  mkdir build && cd build && cmake ../ && make
 fi
 
 echo "===============signal=========================>"
@@ -118,7 +119,8 @@ done
 cd ${project_path}/cpp/tracker_seek/build
 for i in $(seq 0 $((${#link_name[@]}-1)))
 do
-./tracker_seek -f ${i} -L 5 -D 6 -l 0x3F -r ../config/offset_initial.txt -j -T 1>/dev/null
+  echo "11111"
+./tracker_seek -A ${dname} -f ${link_name[$i]} -L 5 -D 6 -l 0x3F -r ../config/offset_initial.txt -j -T 1>/dev/null
 
 done
 

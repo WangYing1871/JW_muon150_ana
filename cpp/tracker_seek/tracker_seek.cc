@@ -1,5 +1,6 @@
 ﻿// tracker_seek.cpp: 定义应用程序的入口点。
 //
+#include <string>
 
 #include "tracker_seek.hh"
 
@@ -46,10 +47,14 @@ int main(int argc, char **argv)
 	bool is_calc_target_layer = false;
 	cout << "Begin process" << endl;
 	int c = 0;
-	while ((c = getopt(argc, argv, "f:o:e:N:L:D:r:t:jl:TO:F")) != EOF)
+  std::string dir_name = ".";
+	while ((c = getopt(argc, argv, "A:f:o:e:N:L:D:r:t:jl:TO:F")) != EOF)
 	{
 		switch (c)
 		{
+      case 'A':
+        dir_name = optarg;
+        break;
 		case 'f':
 			data_filename = optarg;
 			break;
@@ -136,14 +141,16 @@ int main(int argc, char **argv)
 	string save_filename = filename_suffix[1] + "_" + save_filename_append + "_rmse" + to_string((int)rmse_upper) + "mm" + to_string(possible_strip_num) + "strips" + to_string(min_hit_layer) + "min_layer_" + user_set_layer_used;
 	best_tracker tracker_find(data_filename, save_filename, det_layer_used);
 	string save_file_path = "./";
-	if (filename_suffix2.size() == 1)
-	{
-		save_file_path = "./";
-	}
-	else
-	{
-		save_file_path = filename_suffix2[1] + "/" + to_string(timestamp) + "/";
-	}
+  save_file_path = dir_name+"/"+std::to_string(timestamp)+"/";
+	//if (filename_suffix2.size() == 1)
+	//{
+	//	save_file_path = "./";
+	//}
+	//else
+	//{
+	//	//save_file_path = filename_suffix2[1] + "/" + to_string(timestamp) + "/";
+	//	save_file_path = std::to_string(timestamp) + "/";
+	//}
 
 	// Check the save path is exist or not if not create
 	if (is_save_json)
