@@ -1,3 +1,0 @@
-/home/wangying/work/mis/analyse_code/cpp/calcu_and_draw/build/CMakeFiles/calcu_and_draw.dir
-/home/wangying/work/mis/analyse_code/cpp/calcu_and_draw/build/CMakeFiles/edit_cache.dir
-/home/wangying/work/mis/analyse_code/cpp/calcu_and_draw/build/CMakeFiles/rebuild_cache.dir
