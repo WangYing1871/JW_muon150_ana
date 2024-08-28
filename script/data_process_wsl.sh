@@ -157,6 +157,28 @@ echo $TOTAL_LOOP_NUM
 declare -i start_loop_number=$START_LOOP_NUM
 declare -i end_loop_number=$TOTAL_LOOP_NUM
 
+if [ "$NOISE_FILE_PATH" = "" ]; then
+  echo "No NOISE_FILE_PATH Geti, exit"
+  exit
+fi
+
+echo "=+++++++++++>noise++++++++++++++>"
+USB_DATA_PROCESS="$SW_PATH/usb_data_separate/build/usb_data_separate"
+$USB_DATA_PROCESS -f $NOISE_FILE_PATH/noise-0.dat -r 1>/dev/null
+UNPACK="$SW_PATH/adas_data_unpack/build/adas_data_unpack"
+NEW_FILE_PATH="${MUSTC_DATA%/*}/dec_out"
+for j in $(seq 16)
+do
+    a=$(($(($((LINK_NUM))>>$((j-1))))&0x1))
+    if [ $a -eq 0 ]
+    then
+        continue
+    fi
+    $UNPACK -i 6 -L 15 -b 1 -f "$NEW_FILE_PATH/noise-0_mt-$((${j}-1)).dat" 1>/dev/null
+done
+echo "=+++++++++++<noise++++++++++++++<"
+
+echo "=+++++++++++>signal++++++++++++++>"
 if [ "$SKIP_USB_DATA_SEPERATE" = 1 ]
 then
     echo "Skip USB data seperate";
@@ -247,3 +269,4 @@ else
   done
   echo -e '\e[1;42m tracker_seek done\e[1;m'
 fi
+echo "=+++++++++++<signal++++++++++++++<"

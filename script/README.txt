@@ -2,6 +2,7 @@
   主要参数
   -S 分析软件位置
   -A json文件产生位置
+  -N 基线文件所在位置，!!现在务必保持与原初始信号文件同路径，名字为noise-0.dat!!
   -L link参数，描述使用的板号
   -d 待分析文件名
   -D 是否跳过分包
@@ -11,10 +12,11 @@
 
 
 用例
-  bash data_process.sh -d /home/wangying/work/data/muon-7.dat -L 0x3f -D -F -H -T -A /home/wangying/ -S /home/wangying/work/JW_muon150_ana/cpp/
+  bash data_process_wsl.sh -N /home/wangying/work/data/ -d /home/wangying/work/data/muon-7.dat -L 0x3f -D -F -H -T -A /home/wangying/ -S /home/wangying/work/JW_muon150_ana/cpp/
 
   待分析初始文件： /home/wangying/work/data/muon-7.dat
   使用板号: (0b00111111) 0, 1, 2, 3, 4, 5块
   json文件生成位置： /home/wangying
   分析软件所在位置： /home/wangying/work/JW_muon150_ana/cpp/
   所有步骤都执行
+
